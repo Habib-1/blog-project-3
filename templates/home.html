@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+      {% block content %}
+      <div class="container">
+        <div class="row d-flex justify-content-evenly align-items-center mt-5">
+           
+            <div class="col-lg-6 col-sm-12 col-md-6 col-12">
+            <h1><span class="text-danger"> Hellow,</span> <br> <span class="text-success"> Welcome To Our Platform </span></h1>
+            <h5 class="text-danger">Gain Silently & Share Loudly</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ex! Esse eos doloremque quis vel dicta commodi natus reiciendis perspiciatis.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ex! Esse eos doloremque quis vel dicta commodi natus reiciendis perspiciatis.
+            </p>
+            
+              {% if request.user.is_authenticated %}
+              <h4 class="text-primary">Thank You For Joining</h4>
+              {% else %}
+              <h5>For Explore Your Creativity<h5>
+              <a href="{% url 'login' %}" class="btn btn-primary me-2">Login</a>
+              <a href="{% url 'register' %}" class="btn btn-info me-2">Register</a>
+              {% endif %}
+                       
+            </div>
+                    
+            <div class="col-lg-6 col-sm-12 col-md-6 col-12">
+              <img class="img-fluid" src="  {% static 'image/img1.png' %}" alt="Image">
+            </div>
+        </div>
+       
+      </div>
+    {% endblock content %}
+    
